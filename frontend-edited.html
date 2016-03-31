@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Image Fusion</title>
+    <link rel="stylesheet" href="da.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <form action="https://www.wolframcloud.com/objects/206320ec-7a72-41e0-acb1-b6459feee95d" method="GET">
+        <div class="header">
+            Break Images Down and Put Them Back Together!
+        </div>
+        <div class="caveat">
+            <p>Copy and paste the URLs of the images into the prompts, and select the weights and image conformations</p>
+        </div>
+        <div class="description">
+            <p>Enter the URLs of the images,weights, and conformations.</p>
+        </div>
+        <div class="input">
+            <input type="text" class="button" id="url" name="i1" value="https://www.script-tutorials.com/demos/13/files/image.jpg">
+        </div>
+        <div class="input">
+            <input type="text" class="button" id="url" name="i2" value="https://upload.wikimedia.org/wikipedia/en/c/c4/Original_Image_before_ASTC_compression.jpg">
+        </div>
+        <div class="input" id="slide">
+            <span>Image 1 Weight:</span>
+            <input type="range" id="r1" name="w1" min=".1" max="3" step=".1" /><span id="w1"></span><br>
+        </div>
+        <div class="input" id="slide">
+            <span>Image 2 Weight</span>
+            <input type="range" id="r2" name="w2" min=".1" max="3" step=".1" /><span id="w2"></span><br>
+        </div>
+        <div class="input" id="slide">
+            <span>Image Conformation</span><br>
+            <input type="radio" name="wH" value=0 checked><span>Transform Image 1 to Image 2</span><br>
+            <input type="radio" name="wH" value=1>Transform Image 2 to Image 1
+        </div>
+        <div class=input>
+            <input type="submit" class="button" id="submit" value="Submit">
+        </div>
+        <br><br>
+    </form>    
+
+    <script>
+        document.getElementById("r1").onchange = function () {
+            document.getElementById("w1").innerHTML = document.getElementById("r1").value;
+        }
+
+        document.getElementById("r2").onchange = function () {
+            document.getElementById("w2").innerHTML = document.getElementById("r2").value;
+        }
+    </script>
+</body>
+
+</html>
